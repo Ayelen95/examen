@@ -152,6 +152,7 @@ describe('Request', () => {
       return req(METHOD_POST, STATUS_USER_ERROR, { title: 'title'}, `${PATH}/author/Mariana`);
     });
   });
+  
 
   describe(`${METHOD_GET} ${PATH}`, () => {
     it('Obtiene el listado de Posts', () => {
@@ -237,7 +238,7 @@ describe('Request', () => {
           });
     });
   });
-
+  
   describe(`${METHOD_GET} ${PATH}/:author/:title`, () => {
     it('Retorna todos los Post del autor `Martina`', () => {
       const posts = [
@@ -350,7 +351,7 @@ describe('Request', () => {
         });
     });
   });
-
+  
   describe(`${METHOD_DELETE} ${PATH}`, () => {
     it('Elimina un Post existente', () => {
       const post1 = { author: 'first author', title: 'first title', contents: 'first contents' };
@@ -379,7 +380,7 @@ describe('Request', () => {
       return req(METHOD_DELETE, STATUS_USER_ERROR, { id: 1 });
     });
   });
-
+  
   describe(`${METHOD_DELETE} /author`, () => {
     it('Informa que falta el parámetro `author`', () => {
       return req(METHOD_DELETE, STATUS_USER_ERROR);
